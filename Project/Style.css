@@ -1,0 +1,16 @@
+body {
+    background-image: url("https://i.pinimg.com/originals/92/70/9b/92709b0c0acbe201f3aa135bd36823ef.jpg");
+}
+h1 {
+    font-size: 8rem;
+    text-align: center;
+    margin: 2rem;
+    font-style: italic;
+}
+div#content {
+    background-color: aliceblue;
+    height: 20rem;
+    text-align: center;
+    outline-style: outset;
+    margin: 3rem;
+}
