@@ -20,16 +20,16 @@ document.addEventListener("DOMContentLoaded", () => {
       // Create status dropdown
       const statusSelect = document.createElement("select");
       statusSelect.innerHTML = `
-                <option value="not-started" ${
-                  todo.status === "not-started" ? "selected" : ""
-                }>Not Started</option>
-                <option value="pending" ${
-                  todo.status === "pending" ? "selected" : ""
-                }>Pending</option>
-                <option value="done" ${
-                  todo.status === "done" ? "selected" : ""
-                }>Done</option>
-            `;
+               <option value="not-started" ${
+                 todo.status === "not-started" ? "selected" : ""
+               }>Not Started</option>
+               <option value="pending" ${
+                 todo.status === "pending" ? "selected" : ""
+               }>Pending</option>
+               <option value="done" ${
+                 todo.status === "done" ? "selected" : ""
+               }>Done</option>
+           `;
       statusSelect.addEventListener("change", (e) => {
         todos[index].status = e.target.value;
         saveTodos();
@@ -38,17 +38,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
       li.appendChild(statusSelect);
 
-      // Delete button
-      const deleteButton = document.createElement("button");
-      deleteButton.textContent = "Delete";
-      deleteButton.addEventListener("click", (e) => {
-        e.stopPropagation();
-        todos.splice(index, 1);
-        saveTodos();
-        renderTodos();
-      });
+      // Conditionally add the delete button
+      if (todo.status !== "pending") {
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete";
+        deleteButton.addEventListener("click", (e) => {
+          e.stopPropagation();
+          todos.splice(index, 1);
+          saveTodos();
+          renderTodos();
+        });
 
-      li.appendChild(deleteButton);
+        li.appendChild(deleteButton);
+      }
 
       // Append to appropriate list
       if (todo.status === "not-started") {
