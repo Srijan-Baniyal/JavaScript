@@ -1,3 +1,9 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
@@ -29,6 +35,7 @@ body {
 }
 
 button {
+  display: inline-block;
   padding: 10px;
   background-color: #28a745;
   color: white;
@@ -38,7 +45,7 @@ button {
 }
 
 button:hover {
-  background-color: #218838;
+  background-color: cornflowerblue;
 }
 
 .columns {
@@ -51,6 +58,7 @@ button:hover {
   background: #f4f4f4;
   padding: 10px;
   border-radius: 3px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .column h2 {
@@ -74,8 +82,6 @@ li {
 }
 
 li button {
-  background: none;
-  border: none;
   cursor: pointer;
 }
 
